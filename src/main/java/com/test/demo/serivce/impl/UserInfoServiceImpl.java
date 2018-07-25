@@ -6,6 +6,7 @@ import com.test.demo.serivce.UserInfoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
@@ -16,6 +17,11 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public UserInfo findByUsername(String username){
         return userInfoRepository.findByUsername(username);
+    }
+
+    @Override
+    public List<UserInfo> getUserInfo() {
+        return userInfoRepository.findAll();
     }
 
 }

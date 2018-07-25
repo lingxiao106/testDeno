@@ -1,4 +1,4 @@
-package com.test.demo.config;
+package com.test.demo.ftp;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
