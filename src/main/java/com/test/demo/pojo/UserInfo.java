@@ -1,11 +1,18 @@
 package com.test.demo.pojo;
 
 import javax.persistence.*;
+
+import org.springframework.data.redis.core.RedisHash;
+
 import java.io.Serializable;
 import java.util.List;
 
+
+//@RedisHash("people")
 @Entity
 public class UserInfo implements Serializable {
+	
+//	@org.springframework.data.annotation.Id
     @Id
     @GeneratedValue
     private Integer uid;

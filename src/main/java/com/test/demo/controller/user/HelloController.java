@@ -1,4 +1,4 @@
-package com.test.demo.controller;
+package com.test.demo.controller.user;
 
 
 import com.test.demo.serivce.EmailService;

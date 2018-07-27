@@ -1,4 +1,4 @@
-package com.test.demo.controller;
+package com.test.demo.controller.user;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
