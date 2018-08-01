@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://camel.apache.org/schema/spring">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script  src="/echarts.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 100%; height: 920px;"></div>
+    <script type="text/javascript">
+        var myChat = echarts.init(document.getElementById("main"))
+
+        var option = {
+            title:{
+                text:"myfirst"
+            },
+            tooltip:{},
+            legend:{
+                data:["比特币","算法","人工智能"]
+            },
+            xAxis:{
+                data:["第一年","第二年","第三年"]
+            },
+            yAxis:{},
+            series:[{
+                name:"比特币",
+                type:"bar",
+                data:[1,2,3]
+            }, {
+                name: "算法",
+                type: "bar",
+                data: [1.1, 2.2, 3.3]
+            },{
+                name: "人工智能",
+                type: "bar",
+                data: [1.5, 2.5, 3.5]
+            }]
+        };
+        myChat.setOption(option)
+    </script>
+</body>
+</html>
