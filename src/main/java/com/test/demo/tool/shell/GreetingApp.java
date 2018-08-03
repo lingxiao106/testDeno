@@ -1,4 +1,4 @@
-package com.test.demo.shell;
+package com.test.demo.tool.shell;
 
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;

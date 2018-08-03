@@ -1,4 +1,4 @@
-package com.test.demo.scheduling;
+package com.test.demo.tool.scheduling;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;

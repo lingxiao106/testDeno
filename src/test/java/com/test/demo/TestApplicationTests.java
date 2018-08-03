@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.test.demo.queue.HelloSender;
+import com.test.demo.tool.queue.HelloSender;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

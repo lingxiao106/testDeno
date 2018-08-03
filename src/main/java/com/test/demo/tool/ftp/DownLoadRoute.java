@@ -1,4 +1,4 @@
-package com.test.demo.ftp;
+package com.test.demo.tool.ftp;
 
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
