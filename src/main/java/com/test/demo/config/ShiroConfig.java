@@ -1,5 +1,7 @@
 package com.test.demo.config;
 
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
@@ -41,6 +43,15 @@ public class ShiroConfig {
         return myShiroRealm;
     }
 
+
+    @Bean
+    public HashedCredentialsMatcher hashedCredentialsMatcher(){
+        HashedCredentialsMatcher  hashedCredentialsMatcher = new HashedCredentialsMatcher();
+        hashedCredentialsMatcher.setHashAlgorithmName("SHA-256");//使用MD5散列算法
+//        hashedCredentialsMatcher.setHashIterations(0);//散列次数，这里等于1次MD5
+        hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);  //散列后密码为16进制，要与生成密码时一致。false 表示Base64编码
+        return hashedCredentialsMatcher;
+    }
 
     @Bean
     public DefaultWebSecurityManager securityManager(){

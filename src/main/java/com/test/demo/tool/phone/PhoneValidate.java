@@ -18,11 +18,10 @@ public class PhoneValidate {
 
     static String smsSign = "凌不在潇"; //标签
 
-    static String yzm = String.valueOf((int) ((Math.random() * 9 + 1) * 100000)); //验证码 随机6位数
-
     static String a = "5"; //其他
 
     public static String getPhoneValidate(String phoneNumbers) {
+        String yzm = String.valueOf((int) ((Math.random() * 9 + 1) * 100000)); //验证码 随机6位数
         try {
             String[] params = {yzm, a};
             SmsSingleSender ssender = new SmsSingleSender(appid, appkey);
@@ -40,6 +39,6 @@ public class PhoneValidate {
         } catch (com.github.qcloudsms.httpclient.HTTPException e) {
             e.printStackTrace();
         }
-        return "验证码发送成功";
+        return yzm;
     }
 }
