@@ -26,6 +26,8 @@ public class ShiroConfig {
         //<!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
         filterChainDefinitionMap.put("/**", "authc");
 
+        filterChainDefinitionMap.put("/userInfo/**","roles[admin]");
+
         // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
         shiroFilterFactoryBean.setLoginUrl("/login");
         // 登录成功后要跳转的链接
@@ -43,15 +45,15 @@ public class ShiroConfig {
         return myShiroRealm;
     }
 
-
-    @Bean
-    public HashedCredentialsMatcher hashedCredentialsMatcher(){
-        HashedCredentialsMatcher  hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName("SHA-256");//使用MD5散列算法
-//        hashedCredentialsMatcher.setHashIterations(0);//散列次数，这里等于1次MD5
-        hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);  //散列后密码为16进制，要与生成密码时一致。false 表示Base64编码
-        return hashedCredentialsMatcher;
-    }
+//
+//    @Bean
+//    public HashedCredentialsMatcher hashedCredentialsMatcher(){
+//        HashedCredentialsMatcher  hashedCredentialsMatcher = new HashedCredentialsMatcher();
+//        hashedCredentialsMatcher.setHashAlgorithmName("SHA-256");//使用MD5散列算法
+////        hashedCredentialsMatcher.setHashIterations(0);//散列次数，这里等于1次MD5
+//        hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);  //散列后密码为16进制，要与生成密码时一致。false 表示Base64编码
+//        return hashedCredentialsMatcher;
+//    }
 
     @Bean
     public DefaultWebSecurityManager securityManager(){

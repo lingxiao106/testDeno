@@ -12,7 +12,7 @@ import java.util.Date;
 @EnableScheduling
 public class scheduling {
 
-    @Scheduled(cron = "1/1 1/1 17 * * ?")
+//    @Scheduled(cron = "1/1 1/1 17 * * ?")
     public void scheduleTest(){
         System.err.println("scheduleTest开始定时执行" + new Date()) ;
     }

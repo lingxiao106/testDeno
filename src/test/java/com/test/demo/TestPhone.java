@@ -28,8 +28,8 @@ public class TestPhone {
     public static void main(String[] args) {
         try {
             String[] params = {yzm, a};
-            SmsSingleSender ssender = new SmsSingleSender(appid, appkey);
-            SmsSingleSenderResult result = ssender.sendWithParam("86", phoneNumbers[0],
+            SmsSingleSender sender = new SmsSingleSender(appid, appkey);
+            SmsSingleSenderResult result = sender.sendWithParam("86", phoneNumbers[0],
                     templateId, params, smsSign, "", "");  // 签名参数未提供或者为空时，会使用默认签名发送短信
         } catch (HTTPException e) {
             // HTTP响应码错误
