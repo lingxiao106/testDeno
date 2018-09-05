@@ -1,37 +1,27 @@
 package com.test.demo;
 
 
-import org.apache.tomcat.util.digester.ArrayStack;
-import org.thymeleaf.util.ListUtils;
-
-import java.util.List;
+import org.assertj.core.util.DateUtil;
 
 public class Test {
 
-    public static void main(String[] args){
-        System.out.println("Test");
-
-        List<String> list = new ArrayStack<>();
-        list.add("ABCDEF");
-        list.add("ABCD");
-        list.add("ABED");
-        list.add("ACDG");
-        System.out.println("之前");
-        for (String x:list) {
-            System.out.println(x);
+    public static void main(String[] args) {
+        long currDate = DateUtil.now().getTime();
+        int i = 1 << 24;
+        int j = 0;
+        while (i != j) {
+            System.out.println(j++);
         }
-        System.out.println(ListUtils.sort(list));
-        System.out.println("之后");
-        for (String s:ListUtils.sort(list)) {
-            System.out.println(s);
-        }
-        System.out.println(list.size());
-        list.clear();
-        System.out.println(list.size());
+        System.out.println();
+//        for (int j = 0;j < i;j++){
+//
+//            System.out.println(j);
+//        }
+        System.out.println(currDate);
+        long afterDate = DateUtil.now().getTime();
+        System.out.println(afterDate);
+        System.out.println("用时时间" + (afterDate - currDate) / 1000);
+        System.out.println();
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
 }

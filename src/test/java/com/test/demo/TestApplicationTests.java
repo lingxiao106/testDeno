@@ -35,6 +35,8 @@ public class TestApplicationTests {
 //        redisTemplate.opsForValue().set("aaa", "xiaowang");
         
         System.out.println(redisTemplate.opsForValue().get("aaa"));
+        redisTemplate.discard();
+
     }
 
     @Test
